@@ -1,0 +1,112 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* body{
+  height: 100vh;
+  background: rgb(3, 3, 39);
+  display: grid;
+  place-items: center;
+} */
+.section1{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: rgb(3, 3, 39);
+}
+h1{
+  color: #fafafa;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: titre 2s ease-in-out;
+}
+.box{
+  position: relative;
+  height: 300px;
+  width: 200px;
+  background: red;
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: angelika 3s ease-in infinite;
+}
+div img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+div img:nth-child(2){
+  transform: rotateY(-180deg);
+}
+#Calque_1{
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.cls-1,.cls-2,.cls-4,.cls-5{
+  fill:#11417d;
+  stroke:#11417d;
+  stroke-miterlimit:10;
+}
+.cls-2{
+  animation-delay: .5s;
+}
+.cls-3{
+  fill:#bcc4c6;
+  stroke:#bcc4c6;
+  stroke-miterlimit:10;
+  animation-delay: 1s;
+}
+.cls-4{
+  animation-delay: 1.5s;
+}
+.cls-5{
+  animation-delay: 2s;
+}
+#Calque_1 path{
+  opacity: 0;
+  stroke-dasharray: 4000px;
+  stroke-dashoffset: 0;
+  animation: svgMoove 4s ease-in-out;
+  animation-fill-mode: forwards;
+}
+.blob{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  height: 400px;
+  width: 400px;
+}
+.blob svg{
+  height: 150%;
+  width: 150%;
+}
+.blob svg path{
+  transform: translate(100px, 100px);
+}
+.linear{
+  width: 90px;
+  height: 90px;
+}
+
+@keyframes angelika {
+  from{transform: rotateY(0)}
+  to{transform: rotateY(360deg)}
+}
+@keyframes titre {
+  from{width: 0;}
+  to{width: 240px;}
+}
+@keyframes svgMoove {
+  0%{opacity: 1; stroke-dashoffset: 4000px; fill-opacity: 0;}
+  80%{opacity: 1; stroke-dashoffset: 0; fill-opacity: 0;}
+  100%{opacity: 1; stroke-dashoffset: 0; fill-opacity: 1;}
+}
